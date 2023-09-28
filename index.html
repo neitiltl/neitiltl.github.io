@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Etusivu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgba(238, 230, 218, 255);
+            color: black;
+            font-family: 'Inclusive Sans', sans-serif;
+            font-size: 20px;
+        }
+        
+
+
+        .header {
+            overflow: hidden;
+            background-color: rgba(251, 255, 251, 255);
+            padding: 20px 10px;
+        }
+
+        .header a {
+            float: left;
+            color: rgba(207, 185, 169, 255);
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .header a:hover {
+            background-color: rgba(242, 218, 195, 255);
+            color: black;
+        }
+
+        .header a.active {
+            background-color: rgba(238, 230, 218, 255);
+            color: black;
+        }
+
+        .header-right {
+            float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .header-right {
+                float: none;
+            }
+        }
+
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(251, 255, 251, 255);
+            color: rgba(207, 185, 169, 255);
+            text-align: center;
+            font-size: 15px;
+        }
+
+        div.container {
+            text-align: center;
+        }
+
+
+        ul.no-bullets {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        div.myTxt {
+            text-align: justify;
+            margin: 5%
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <div class="header">
+        <a href="index.html" class="logo">OMPELIMO</a>
+        <div class="header-right">
+            <a class="active" href="index.html">Etusivu</a>
+            <a href="hinnasto.html">Hinnasto</a>
+            <a href="henkilokunta.html">Henkilökunta</a>
+        </div>
+    </div>
+
+
+
+    <div class="myTxt">
+        <center>
+            <p><h3>Tervetuloa Ompelimoon!</h3></p>
+        </center>
+
+        <p>Henkilökuntamme palvelee sinua kaikissa ompeluun ja pukeutumiseen liittyvissä ongelmissa. Korjaus- ja
+        mittatilausompelun lisäksi tarjoamme kaavoituspalveluja ja pukeutumisneuvontaa.</p>
+
+        <p><b>Korjausompelu, muodistukset:</b>
+            Korjaamme vanhan lempivaatteesi, loihdimme isoäidin hääpuvusta modernin juhlapuvun ja muokkaamme
+            valmisvaatteen sinun mittojesi mukaiseksi.</p>
+
+        <p><b>Kaavoitus ja mittatilausompelu:</b>
+            Onko sinulla visio unelmiesi juhlapuvusta? Kaavoitamme ja valmistamme unelmiesi vaatteen omien mittojesi
+            mukaan.</p>
+        <p>Eikö valmiskaavoista löydy mieleistä ommeltavaa? Piirrämme sinulle peruskaavat, joiden avulla kuosittelet ja
+            ompelet itse täydellisesti istuvat vaatteet.</p>
+
+        <p><b>Pukeutumisneuvonta:</b>
+            Onko kaappisi täynnä vaatteita, jotka eivät näytä hyvältä päällä? Tule vartaloanalyysiin katsomaan,
+            millaisilla vaatteilla korostat parhaita puoliasi.</p>
+
+
+    </div><br>
+
+
+
+    <div class="container">
+        <ul class="no-bullets">
+
+
+            <h3>Yhteystiedot</h3>
+
+            </p>
+
+            <li>OMPELIMO</li>
+            <li>Ompelimokuja 13</li>
+            <li>00130 Ommellus</li><br>
+
+            <li>sähköposti@osoite.fi</li>
+            <li>+358 123 456 789</li><br><br><br>
+
+        </ul>
+    </div>
+
+
+    <div class="footer">
+        <center>
+            <p>OMPELIMO Y-tunnus 1234567-8</p>
+        </center>
+    </div>
+
+
+</body>
+
+</html>
