@@ -90,6 +90,16 @@ ul.no-bullets {
     padding: 0;
 }
 
+div.map {
+    padding: 30px;
+    margin: 20px;
+}
+
+div.top {
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
 div.myTxt {
     text-align: justify;
     width: 90%;
