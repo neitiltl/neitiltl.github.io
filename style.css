@@ -8,6 +8,7 @@
     color: #FFDEAD;
     /* tekstin väri */
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .navbar-custom .navbar-nav .nav-link {
