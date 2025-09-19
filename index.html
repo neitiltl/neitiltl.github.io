@@ -38,14 +38,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#vuh">Vuh!</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="#hoitola">Hoitola</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#lenkitykset">Lenkitykset</a>
                         </li>
-
+                       
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown">Menu</a>
@@ -70,7 +69,6 @@
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
                 </div>
-
 
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
@@ -117,7 +115,6 @@
             </div>
         </div>
 
-
         <div id="hoitola" class="container-fluid hoitola-container">
             <div class="row">
 
@@ -135,13 +132,11 @@
                         non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
 
-
                 <div class="col-md-4 p-3 my-3">
                     <img src="pexels-r4yg-30271417_16_9.jpg" alt="koira" class="img-fluid">
                 </div>
             </div>
         </div>
-
 
         <div id="lenkitykset" class="container-fluid card-container">
             <h1>Lenkitykset</h1>
@@ -218,7 +213,7 @@
                                     <img src="pexels-anastasiia-vy-3335134-33942563.jpg" alt="Hoitaja A"
                                         class="img-fluid rounded-circle" style="max-width: 100%;">
                                 </div>
-                                <div class="col-sm-9"> Lorem ipsum dolor sit amet, consectetur
+                                <div class="col-sm-9">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do eiusmod tempor incididunt ut
                                     labore et dolore magna aliqua.
                                 </div>
@@ -240,7 +235,7 @@
                                     <img src="pexels-cerenvisuals-33942031.jpg" alt="Hoitaja E"
                                         class="img-fluid rounded-circle" style="max-width: 100%;">
                                 </div>
-                                <div class="col-sm-9"> Lorem ipsum dolor sit amet, consectetur
+                                <div class="col-sm-9">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do eiusmod tempor incididunt ut
                                     labore et dolore magna aliqua.
                                 </div>
@@ -262,7 +257,7 @@
                                     <img src="pexels-nguyen1502-33941710.jpg" alt="Hoitaja I"
                                         class="img-fluid rounded-circle" style="max-width: 100%;">
                                 </div>
-                                <div class="col-sm-9"> Lorem ipsum dolor sit amet, consectetur
+                                <div class="col-sm-9">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit, sed do eiusmod tempor incididunt ut
                                     labore et dolore magna aliqua.
                                 </div>
@@ -309,14 +304,36 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <div class="container p-2 my-2">
+                    <h4>Voit jättää tietosi yhteydenottoa varten:</h4>
+                    <form action="#lomake">
+
+                        <div id="lomake" class="mb-3 mt-3">
+                            <label for="nimi">Nimi:</label>
+                            <input type="text" class="form-control" id="nimi" placeholder="Kirjoita nimesi" name="nimi"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Sähköposti:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Kirjoita sähköpostiosoite"
+                                name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nro">Puhelinnumero:</label>
+                            <input type="tel" class="form-control" id="nro" placeholder="Kirjoita puhelinnumero"
+                                name="puhelinnumero">
+                        </div>
+
+                        <button type="submit" class="btn buttonsend">Lähetä</button>
+                    </form>
+                </div>
+
                 <br><br>
             </div>
 
         </div>
 
-
-
     </main>
 </body>
-
 </html>
