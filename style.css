@@ -39,7 +39,6 @@
     /* tekstin väri */
 }
 
-
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(161,136,127,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     /* hamburgerin väri */
@@ -59,7 +58,6 @@
     background: #FAF0E6 !important;
 }
 
-
 body {
     position: relative;
     /* Scroll-spy */
@@ -77,7 +75,6 @@ body {
     /* oikea kuvasuhde mobiilissa */
 }
 
-
 .karuselli-container {
     background-color: #FDF5E6;
     padding: 40px 20px;
@@ -86,7 +83,7 @@ body {
 
 .carousel-caption {
     background-color: rgba(141, 110, 99, 0.6);
-    /* lämmin ruskea, hieman läpinäkyvä */
+    /* hieman läpinäkyvä ruskea caption-tausta */
     border-radius: 10px;
     padding: 5px;
 }
@@ -143,7 +140,6 @@ body {
 
 .card-container .card .card-footer {
     background-color: #FFEFD5;
-
 }
 
 .hoitajat-container {
@@ -159,12 +155,10 @@ body {
 .hoitajat-container .card-header a {
     background-color: #FFDEAD;
     font-weight: inherit;
-
 }
 
 .hoitajat-container .card-body {
     background-color: #FFFFF0;
-
 }
 
 .yhteys-container {
@@ -174,14 +168,35 @@ body {
 
 .yhteys-container .table thead th {
     background-color: #FFEFD5 !important;
+    /*taulukon otsikkoväri*/
 }
 
 .yhteys-container .table tbody td {
     background-color: #FFFFF0 !important;
+    /*taulukon riviväri*/
 }
 
 .yhteys-container .table tbody tr:hover td {
     background-color: #FFDEAD !important;
+    /*taulukon hover-riviväri*/
+}
+
+.buttonsend {
+    background-color: #FFDEAD !important;
+    border-color: #FFDEAD !important;
+}
+
+.form-control {
+    background-color: #FFFFF0;
+    border-color: #FFFFF0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.3);
+    /*lomakekentän väri ja kehys*/
+}
+
+.form-control:focus {
+    background-color: #FFFFF0;
+    border-color: #FFFFF0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.6);
 }
 
 h1 {
