@@ -1,0 +1,225 @@
+.navbar-custom {
+    background-color: #6D4C41;
+    /* taustan väri */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #FFDEAD;
+    /* tekstin väri */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #FAF0E6;
+    /* linkin väri */
+}
+
+.navbar-custom .nav-item.active .nav-link {
+    color: #4E342E;
+    font-weight: bold;
+    /* aktiivisena */
+}
+
+.navbar-custom .nav-item:hover .nav-link {
+    color: #FFDEAD;
+    /* hover-linkin väri */
+}
+
+.nav-link.active {
+    color: #FFDEAD !important;
+    /* Scroll-spy kohde aktiivinen */
+}
+
+.nav-item .dropdown-menu .dropdown-item.active,
+.nav-item .dropdown-menu .dropdown-item:active {
+    background-color: #FFDEAD !important;
+    /* haluamasi väri */
+    color: #333 !important;
+    /* tekstin väri */
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(161,136,127,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    /* hamburgerin väri */
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #A1887F;
+}
+
+.nav-item .dropdown-menu a:hover {
+    color: #333 !important;
+    background: #FFDEAD !important;
+    cursor: pointer;
+}
+
+.nav-item .dropdown-menu {
+    background: #FAF0E6 !important;
+}
+
+body {
+    position: relative;
+    /* Scroll-spy */
+}
+
+#demo {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#demo img {
+    width: 100%;
+    height: auto;
+    /* oikea kuvasuhde mobiilissa */
+}
+
+.container {
+    background-color: #FDF5E6;
+    padding: 40px 20px;
+    /*ylä ja ala 40, sivut 20*/
+}
+
+.karuselli-container {
+    background-color: #FDF5E6;
+    padding: 40px 20px;
+    /*ylä ja ala 40, sivut 20*/
+}
+
+.carousel-caption {
+    background-color: rgba(141, 110, 99, 0.6);
+    /* hieman läpinäkyvä ruskea caption-tausta */
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.carousel-caption h3 {
+    color: #F5F5DC;
+    /*  otsikko */
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    color: #F5F5DC;
+    /*  teksti */
+    font-weight: bold;
+}
+
+.hoitola-container {
+    background-color: #FDF5E6;
+    padding: 40px 20px;
+}
+
+.hoitola-container img {
+    width: 100%;
+    /* koko palstan leveys */
+    max-width: 700px;
+    height: auto;
+    display: block;
+    /* ylimääräinen tila pois ympäriltä*/
+}
+
+.hoitola-container img:first-of-type {
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+
+.hoitola-container img:last-of-type {
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+
+.card-container {
+    background-color: #FDF5E6;
+    padding: 40px 20px;
+}
+
+.card-container .card {
+    background-color: #FFFFF0;
+}
+
+.card-container .card .card-body {
+    background-color: #FFEFD5;
+
+}
+
+.card-container .card .card-footer {
+    background-color: #FFEFD5;
+}
+
+.hoitajat-container {
+    background-color: #FDF5E6;
+    padding: 40px 20px;
+}
+
+.hoitajat-container .card-header {
+    background-color: #FFEFD5;
+    font-weight: bold;
+}
+
+.hoitajat-container .card-header a {
+    background-color: #FFDEAD;
+    font-weight: inherit;
+}
+
+.hoitajat-container .card-body {
+    background-color: #FFFFF0;
+}
+
+.yhteys-container {
+    background-color: #FDF5E6;
+    padding: 40px 20px;
+}
+
+.yhteys-container .table thead th {
+    background-color: #FFEFD5 !important;
+    /*taulukon otsikkoväri*/
+}
+
+.yhteys-container .table tbody td {
+    background-color: #FFFFF0 !important;
+    /*taulukon riviväri*/
+}
+
+.yhteys-container .table tbody tr:hover td {
+    background-color: #FFDEAD !important;
+    /*taulukon hover-riviväri*/
+}
+
+.buttonsend {
+    background-color: #FFDEAD !important;
+    border-color: #FFDEAD !important;
+}
+
+.form-control {
+    background-color: #FFFFF0;
+    border-color: #FFFFF0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.3);
+    /*lomakekentän väri ja kehys*/
+}
+
+.form-control:focus {
+    background-color: #FFFFF0;
+    border-color: #FFFFF0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.6);
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+h4 {
+    text-align: center;
+}
+
+#vuh,
+#hoitola,
+#lenkitykset,
+#hoitajat,
+#yhteys {
+    scroll-margin-top: 90px;
+    /* navbarille tilaa */
+}
