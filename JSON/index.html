@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 
 <head>
     <meta charset="utf-8">
@@ -45,8 +45,62 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container" id="vastaus">
             <h1>JSON-datan käsittely</h1>
+
+            <script>
+                function kerro(data) {
+
+                    var teksti = "";
+
+                    teksti = "<h1>" + data.yritys + "</h1>";
+
+                    teksti = teksti + "<p>" + "<b>" + "Yhteysteidot" + "</b>" + "<br>"
+
+                        + data.yhteystiedot.puhelin + "<br>"
+
+                        + data.yhteystiedot.email + "</p>";
+
+                    document.getElementById("vastaus").innerHTML = teksti;
+
+                }
+
+
+                //Tähän kirjoita oman JSON tietueesi URL
+
+                fetch('https://neitiltl.github.io/JSON/tietue.json')
+
+
+                    // Muunnetaan vastaus JSON muotoon
+
+                    .then(function (response) {
+
+                        return response.json();
+
+                    })
+
+
+                    //Käsitellään muunnettu (eli JSON muotoinen) vastaus
+
+                    .then(function (responseJson) {
+
+                        // Kutsutaan funktiota ja välitetään sille json-vastaus
+
+                        kerro(responseJson);
+
+                    })
+
+
+                    // Jos tuli jokin virhe
+
+                    .catch(function (error) {
+
+                        document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+
+                    })
+
+            </script>
+
             <p>This part is inside a .container class.</p>
 
         </div>
