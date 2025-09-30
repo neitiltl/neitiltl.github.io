@@ -14,7 +14,6 @@
 
 <body>
     <main>
-
         <nav class="navbar navbar-expand-sm navbar-custom">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">JSON</a>
@@ -25,93 +24,84 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#index.html">Etusivu: Tehtävä 1.1</a>
+                            <a class="nav-link" href="index.html">Etusivu: Tehtävä 1.1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tehtävä 1.2</a>
+                            <a class="nav-link" href="toteutus.html">Tehtävä 1.2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tehtävä 2.1</a>
+                            <a class="nav-link" href="pokemon.html">Tehtävä 2.1-2.2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tehtävä2.2 </a>
+                            <a class="nav-link" href="saa.html">Tehtävä 3</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tehtävä 3</a>
-                        </li>
-
                     </ul>
                 </div>
             </div>
         </nav>
 
         <div class="container" id="vastaus">
-
-            <script>
-                function kerro(data) {
-                    let teksti = "<h1>" + data.otsikko + "</h1><br>"
-                        + data.kuvaus + "<br><hr>"
-                        + "<div style='text-align:center;'>"
-                        + "<p><img src='" + data.kuva + "'></p>"
-                        + "<h3>Opintojakso</h3>"
-                        + "Nimi: " + data.opintojakso.nimi + "<br>"
-                        + "Tunnus: " + data.opintojakso.tunnus + "<br>"
-                        + "Opintopisteet: " + data.opintojakso.opintopisteet + "<br>"
-                        + "</div>";
-
-
-                    teksti += "<p><h3>Aiheet</h3>";
-                    for (let i = 0; i < data.tekniikat.length; i++) {
-                        teksti += "<b>Aihe: " + data.tekniikat[i].aihe + "</b>";
-                        teksti += " <a href='" + data.tekniikat[i].linkki + "'>" + data.tekniikat[i].linkki + "</a>" + "<br>";
-                    }
-
-                    teksti += "</p>"
-                    document.getElementById("vastaus").innerHTML = teksti;
-
-                }
-
-
-                //Tähän kirjoita oman JSON tietueesi URL
-
-                fetch('https://neitiltl.github.io/JSON/tietue.json')
-
-
-                    // Muunnetaan vastaus JSON muotoon
-
-                    .then(function (response) {
-
-                        return response.json();
-
-                    })
-
-
-                    //Käsitellään muunnettu (eli JSON muotoinen) vastaus
-
-                    .then(function (responseJson) {
-
-                        // Kutsutaan funktiota ja välitetään sille json-vastaus
-
-                        kerro(responseJson);
-
-                    })
-
-
-                    // Jos tuli jokin virhe
-
-                    .catch(function (error) {
-
-                        document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
-
-                    })
-
-            </script>
-
-
+            <!-- JSON tulostuu tähän -->
         </div>
 
-    </main>
+        <script>
+            function tulosta(data) {
+                let teksti = "<h1>" + data.otsikko + "</h1><br>"
+                    + data.kuvaus + "<br><hr>"
+                    + "<div style='text-align:center;'>"
+                    + "<p><img src='" + data.kuva + "'></p>"
+                    + "<h3>Opintojakso</h3>"
+                    + "Nimi: " + data.opintojakso.nimi + "<br>"
+                    + "Tunnus: " + data.opintojakso.tunnus + "<br>"
+                    + "Opintopisteet: " + data.opintojakso.opintopisteet + "<br>"
+                    + "</div>";
 
+
+                teksti += "<p><h3>Aiheet</h3>";
+                for (let i = 0; i < data.tekniikat.length; i++) {
+                    teksti += "<b>Aihe: " + data.tekniikat[i].aihe + "</b>";
+                    teksti += " <a href='" + data.tekniikat[i].linkki + "'>" + data.tekniikat[i].linkki + "</a>" + "<br>";
+                }
+
+                teksti += "</p>"
+                document.getElementById("vastaus").innerHTML = teksti;
+
+            }
+
+
+            //oman JSONin URL
+
+            fetch('https://neitiltl.github.io/JSON/tietue.json')
+
+
+                // vastaus JSON muotoon
+
+                .then(function (response) {
+
+                    return response.json();
+
+                })
+
+                //Käsitellään JSON-muotoinen vastaus
+
+                .then(function (responseJson) {
+
+                    // Kutsutaan funktiota ja välitetään sille json-vastaus
+
+                    tulosta(responseJson);
+
+                })
+
+                // virheilmoitus
+
+                .catch(function (error) {
+
+                    document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+
+                })
+
+        </script>
+    </main>
 </body>
 
 </html>
