@@ -1,0 +1,17 @@
+{
+    "kurssi": "Digitekniikat",
+    "osallistuja_lkm": "5",
+    "osallistujat": [
+        "Matti",
+        "Maija",
+        "Teppo",
+        "Teija",
+        "Anselmi"
+    ],
+    "ajoitus": {
+        "alkaa": "13.1.2025",
+        "loppuu": "14.3.2025"
+    },
+    "kesto": "8",
+    "kuva": "https://jaakkola.github.io/json/digi.JPG"
+}
