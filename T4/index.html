@@ -45,7 +45,7 @@
             <div class="row">
 
                 <div class="col-sm-4">
-                    <h2>&#127926; INFORMATION</h2>
+                    <h2>&#127900; INFORMATION</h2>
 
                     <div class="info-container">
                         <p>Tämä harjoitustyö hyödyntää iTunesin avointa rajapintaa.</p>
@@ -55,46 +55,48 @@
                         </p>
                     </div>
 
-                    <h3 class="mt-4">&#127926; STOP THE PRESS</h3>
-                    <div class="info-container">
+                    <div class="mt-4">
+                        <h2>&#127900; STOP THE PRESS</h2>
+                        <div class="info-container">
 
-                        <h3>Musiikkijulkaisuja:</h3>
-                        <ul class="nav nav-pills flex-column">
+                            <h4>Musiikkijulkaisuja:</h4>
+                            <ul class="nav nav-pills flex-column">
 
-                            <li class="nav-item">
-                                <a class="nav-link " href="https://www.rollingstone.com/" target="_blank"
-                                    rel="noreferrer noopener">Rolling Stone</a>
-                            </li>
-                            <!-- tabnabbing @ card-footer: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/  -->
+                                <li class="nav-item">
+                                    <a class="nav-link " href="https://www.rollingstone.com/" target="_blank"
+                                        rel="noreferrer noopener">Rolling Stone</a>
+                                </li>
+                                <!-- tabnabbing @ card-footer: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/  -->
 
-                            <li class="nav-item">
-                                <a class="nav-link " href="https://pitchfork.com/" target="_blank"
-                                    rel="noreferrer noopener">Pitchfork</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="https://pitchfork.com/" target="_blank"
+                                        rel="noreferrer noopener">Pitchfork</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link " href="https://www.nme.com/" target="_blank"
-                                    rel="noreferrer noopener">NME</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="https://www.nme.com/" target="_blank"
+                                        rel="noreferrer noopener">NME</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link " href="https://www.kerrang.com/" target="_blank"
-                                    rel="noreferrer noopener">Kerrang!</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="https://www.kerrang.com/" target="_blank"
+                                        rel="noreferrer noopener">Kerrang!</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link " href="https://www.soundi.fi/" target="_blank"
-                                    rel="noreferrer noopener">SOUNDI</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="https://www.soundi.fi/" target="_blank"
+                                        rel="noreferrer noopener">SOUNDI</a>
+                                </li>
 
-                        </ul>
-                        <hr class="d-sm-none">
+                            </ul>
+                            <hr class="d-sm-none">
+                        </div>
                     </div>
                 </div>
 
 
                 <div class="col-sm-8">
-                    <h2>&#127926; KRAFTWERK</h2>
+                    <h2>&#127900; KRAFTWERK</h2>
                     <div class="card-container">
                         <p>Alla näet valikoiman Kraftwerkin julkaisuista iTunesissa.</p>
                         <p>Klikkaa nappia siirtyäksesi iTunesin artistisivulle.</p>
@@ -105,22 +107,18 @@
                     <div id="results" style=" margin-top: 20px;"></div>
 
                     <script>
-                        function showArtist() {
+                        function showAlbums() {
 
-                            /* https://publicapi.dev/i-tunes-api
-                       https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1 
-                      
-                       https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/LookupExamples.html#//apple_ref/doc/uid/TP40017632-CH7-SW1
-                       Look up all albums for Jack Johnson: https://itunes.apple.com/lookup?id=909253&entity=album.*/
+                            <!--    https://publicapi.dev/i-tunes-api
+                                    https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1  -->
 
-                            fetch(`https://itunes.apple.com/lookup?id=553899&entity=album`)
+                            fetch('https://itunes.apple.com/search?term=kraftwerk&entity=album&limit=50')
                                 .then(response => response.json())
                                 .then(data => {
 
                                     let html = '<div class="row g-3">'; // korttirivin alku
 
-                                    /* ensimmäinen tulos [0] on artistin perustiedot, albumit alkavat toisesta tuloksesta [1] */
-                                    for (let i = 1; i < data.results.length; i++) {
+                                    for (let i = 0; i < data.results.length; i++) {
                                         const album = data.results[i];
 
                                         html += `
@@ -143,7 +141,7 @@
                             </div>
                         </div>
                     `;
-                                    }
+                                    };
 
                                     html += '</div>';
                                     document.getElementById("results").innerHTML = html;
@@ -158,7 +156,7 @@
                         https://www.debugbear.com/blog/domcontentloaded */
 
                         window.addEventListener('DOMContentLoaded', () => {
-                            showArtist();
+                            showAlbums();
                         });
 
                     </script>

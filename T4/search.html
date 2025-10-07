@@ -42,7 +42,7 @@
             <div class="row">
 
                 <div class="col-sm-4">
-                    <h2>&#127926; INFORMATION</h2>
+                    <h2>&#127900; INFORMATION</h2>
 
                     <div class="info-container">
                         <p>Tämä harjoitustyö hyödyntää iTunesin avointa rajapintaa.</p>
@@ -52,7 +52,7 @@
                         </p>
                     </div>
 
-                    <h3 class="mt-4">&#127926; LYRICS</h3>
+                    <h2 class="mt-4">&#127900; LYRICS</h2>
                     <div class="info-container">
 
                         <p>Ovatko kappaleen sanat unohtuneet? Näiltä sivuilta voit etsiä apua:</p>
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="col-sm-8">
-                    <h2>&#127926; SEARCHING</h2>
+                    <h2>&#127900; SEARCHING</h2>
                     <div class="card-container">
                         <p>Syötä hakukenttään artistin, albumin tai kappaleen nimi ja paina <strong>Hae</strong>. Voit
                             kuunnella tuloksista puolen minuutin näytteen.
@@ -96,7 +96,7 @@
                         <p>Huomaa, että tuloksia näytetään enintään 25.</p>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text" rounded ms-2>&#127926;</span>
+                            <span class="input-group-text" rounded ms-2>&#127900;</span>
                             <input type="text" id="searchTerm" class="form-control rounded" placeholder="Hakusanat"
                                 value="kraftwerk music non stop">
                             <button class="btn buttonsend ms-2 rounded" onclick="searchArtist()">Hae</button>
@@ -112,8 +112,8 @@
                         function searchArtist() {
                             const term = document.getElementById("searchTerm").value;
 
-                            /* https://publicapi.dev/i-tunes-api
-                            https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1 */
+                            <!--    https://publicapi.dev/i-tunes-api
+                                    https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1 -->
 
                             fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(term)}&entity=song&limit=25`)
                                 .then(response => response.json())
