@@ -11,26 +11,28 @@ body {
     /*vaakarullaus estyy*/
     overflow-y: auto;
     /*pystyrullaus toimii*/
+    font-family: 'Roboto Mono', monospace;
+    color: #3E2723;
+    /* syvempi ruskea tekstille */
 }
 
 .top {
-    background-image: url("pexels-markusspiske-92083 – opacity.jpg");
-    background-size: cover;
+    background-color: #E3001B;
 }
+
+.top h1,
+.top h4 {
+    color: #ffffff !important;
+    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+}
+
 
 .body-container {
     flex: 1;
     width: 100%;
-    background-image: url("pexels-markusspiske-92083muokattu.jpg");
-    background-size: cover;
-
-}
-
-.lyrics {
-    flex: 1;
-    width: 100%;
     /* kaikki tila navin ja footerin välissä*/
-    background-image: url("pexels-theshuttervision-15447298opacity.jpg");
+    background-image: url("pexels-theshuttervision-15447298.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,20 +44,20 @@ body {
 }
 
 .navbar-custom {
-    background-color: #6D4C41;
+    background-color: black;
     /* taustan väri */
 }
 
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-    color: #FFDEAD;
+    color: white;
     /* tekstin väri */
     font-weight: bold;
     font-size: 1.5rem;
 }
 
 .navbar-custom .navbar-nav .nav-link {
-    color: #FAF0E6;
+    color: lightblue;
     /* linkin väri */
 }
 
@@ -66,21 +68,13 @@ body {
 }
 
 .navbar-custom .nav-item:hover .nav-link {
-    color: #FFDEAD;
+    color: yellow;
     /* hover-linkin väri */
 }
 
 .nav-link.active {
-    color: #FFDEAD !important;
+    color: yellow !important;
     /* Scroll-spy kohde aktiivinen */
-}
-
-.nav-item .dropdown-menu .dropdown-item.active,
-.nav-item .dropdown-menu .dropdown-item:active {
-    background-color: #FFDEAD !important;
-    /* taustaväri */
-    color: #333 !important;
-    /* tekstin väri */
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -106,40 +100,33 @@ body {
     color: #FFDEAD;
 }
 
-.nav-item:hover .nav-link {
-    color: #FFDEAD;
-    /* hover-linkin väri */
-}
 
-.container {
-    background-color: #FDF5E6;
-    padding: 40px 20px;
-    /*ylä ja ala 40, sivut 20*/
-    border-radius: 12px;
-}
-
-.memory-container .nav-link {
-    color: #6D4C41;
+.info-container .nav-link {
+    color: #3E2723;
     font-weight: bold;
 }
 
-.memory-container .nav-item:hover .nav-link {
-    color: #A1887F
-        /* hover-linkin väri */
+.info-container .card {
+    margin-bottom: 15px;
 }
-
 
 .container .nav-link {
     color: #6D4C41;
     font-weight: bold;
 }
 
-.container .nav-item:hover .nav-link {
-    color: #A1887F
-        /* hover-linkin väri */
+
+.card-link:hover {
+    color: yellow;
+    /* hover-linkin väri */
 }
 
-.memory-container {
+.nav-item:hover .nav-link {
+    color: red;
+    /* hover-linkin väri */
+}
+
+.info-container {
     background-color: #FDF5E6;
     padding: 40px 20px;
     border-radius: 12px;
@@ -161,9 +148,18 @@ body {
     margin: 5px;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
 .card-body,
 .card-footer {
-    background-color: #FFEFD5;
+    background-color: #f0f0f0;
+}
+
+.card-body .nav-link:hover {
+    color: red;
 }
 
 .card-img-top {
@@ -175,53 +171,63 @@ body {
     font-weight: bold;
 }
 
-.linkcard .card-link:hover {
-    color: #A1887F
-        /* hover-linkin väri */
-}
 
 .buttonsend,
 .buttonartist {
-    background-color: #FFDEAD !important;
-    border-color: #FFDEAD !important;
+    background-color: lightyellow !important;
+    border-color: lightgray !important;
     color: #333;
     font-weight: bold;
     border-radius: 10px;
+    border-width: 3px;
     margin-bottom: 5px;
 }
 
+.buttonsend:hover {
+    color: red;
+}
+
+.buttonartist:hover {
+    color: red;
+}
+
+
 .input-group-text {
-    background-color: #FFFFF0;
-    border-color: #FFFFF0;
-    box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.3);
+    background-color: lightyellow;
+    border-color: lightgray;
+    box-shadow: 0 0 0 0.2rem lightgray;
     /*lomakekentän etuikonin väri ja kehys*/
 }
 
 .form-control {
-    background-color: #FFFFF0;
-    border-color: #FFFFF0;
-    box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.3);
+    background-color: lightyellow;
+    border-color: lightgray;
+    box-shadow: 0 0 0 0.2rem lightgray;
     /*lomakekentän väri ja kehys*/
 }
 
 .form-control:focus {
-    background-color: #FFFFF0;
-    border-color: #FFFFF0;
-    box-shadow: 0 0 0 0.2rem rgba(255, 222, 173, 0.6);
+    background-color: lightyellow;
+    border-color: yellow;
+    box-shadow: 0 0 0 0.2rem yellow;
 }
 
-h1 {
-    text-align: center;
-    padding-bottom: 20px;
-}
-
+h1,
+h2,
+h3,
 h4 {
-    text-align: center;
+    font-weight: 700;
+    color: #4E342E;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 .footer {
     text-align: center;
-    background-color: #6D4C41;
-    color: #FAF0E6;
+    background-color: #E3001B;
+    color: white;
     padding: 15px 0;
 }

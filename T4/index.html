@@ -2,11 +2,19 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap-harjoitus</title>
+    <title>Music Non Stop</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,7 +23,7 @@
 
     <div class="top p-5  text-center">
         <h1>MUSIC NON STOP</h1>
-        <h4><strong>iTunes-haku</strong></h4>
+        <h4><strong>Kraftwerk @ iTunes</strong></h4>
     </div>
 
     <nav class="navbar navbar-expand-sm  navbar-custom">
@@ -25,7 +33,7 @@
                     <a class="nav-link active" href="index.html">Front Page</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sanat.html">Lyrics</a>
+                    <a class="nav-link" href="search.html">Searching</a>
                 </li>
             </ul>
         </div>
@@ -39,17 +47,18 @@
                 <div class="col-sm-4">
                     <h2>&#127926; INFORMATION</h2>
 
-                    <div class="memory-container">
-                        <p>Harjoitustyö hyödyntää iTunesin avointa rajapintaa.</p>
-                        <p> Voit hakea artistien, kappaleiden ja albumien tietoja JSON-muodossa ja kuunnella selaimessa
-                            lyhyen pätkän kappaleista.
+                    <div class="info-container">
+                        <p>Tämä harjoitustyö hyödyntää iTunesin avointa rajapintaa.</p>
+                        <p>Etusivulle latautuvat automaattisesti Kraftwerkin albumit.</p>
+                        <p> Haku-sivulla voi etsiä musiikkia artistin tai kappaleen nimellä ja kuunnella lyhyitä
+                            näytteitä.
                         </p>
                     </div>
 
-                    <h3 class="mt-4">&#127926; Help!</h3>
-                    <div class="memory-container">
+                    <h3 class="mt-4">&#127926; STOP THE PRESS</h3>
+                    <div class="info-container">
 
-                        <h3>Musiikkilehtiä:</h3>
+                        <h3>Musiikkijulkaisuja:</h3>
                         <ul class="nav nav-pills flex-column">
 
                             <li class="nav-item">
@@ -85,59 +94,58 @@
 
 
                 <div class="col-sm-8">
-                    <h2>&#127926; SEARCHING</h2>
+                    <h2>&#127926; KRAFTWERK</h2>
                     <div class="card-container">
-                        <p>Hae kappaleita iTunesista syöttämällä hakukenttään artistin, albumin tai kappaleen nimi
-                        </p>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" rounded ms-2>&#127926;</span>
-                            <input type="text" id="searchTerm" class="form-control rounded" placeholder="Hakusanat">
-                            <button class="btn buttonsend ms-2 rounded" onclick="searchArtist()">Hae</button>
-                        </div>
+                        <p>Alla näet valikoiman Kraftwerkin julkaisuista iTunesissa.</p>
+                        <p>Klikkaa nappia siirtyäksesi iTunesin artistisivulle.</p>
 
                     </div>
 
                     <!-- tulostetaan results -->
-                    <div id="results" ; style=" margin-top: 20px;"></div>
+                    <div id="results" style=" margin-top: 20px;"></div>
 
                     <script>
-                        function searchArtist() {
-                            const term = document.getElementById("searchTerm").value;
+                        function showArtist() {
 
-                            /* https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1 */
+                            /* https://publicapi.dev/i-tunes-api
+                       https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1 
+                      
+                       https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/LookupExamples.html#//apple_ref/doc/uid/TP40017632-CH7-SW1
+                       Look up all albums for Jack Johnson: https://itunes.apple.com/lookup?id=909253&entity=album.*/
 
-                            fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(term)}&entity=song&limit=12`)
+                            fetch(`https://itunes.apple.com/lookup?id=553899&entity=album`)
                                 .then(response => response.json())
                                 .then(data => {
+
                                     let html = '<div class="row g-3">'; // korttirivin alku
-                                    data.results.forEach(song => {
+
+                                    /* ensimmäinen tulos [0] on artistin perustiedot, albumit alkavat toisesta tuloksesta [1] */
+                                    for (let i = 1; i < data.results.length; i++) {
+                                        const album = data.results[i];
+
                                         html += `
 
                         <div class="col-md-4">
                             
                             <div class="card ">
-                                <img src="${song.artworkUrl100}" class="card-img-top p-4 rounded" alt="Album art">
+                                <img src="${album.artworkUrl100}" class="card-img-top p-4 rounded" alt="Album art">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">${song.trackName}</h5>
+                                    <h5 class="card-title">${album.collectionName}</h5>
                                     <p class="card-text">
-                                        <strong>Artist:</strong> ${song.artistName}<br>
-                                        <strong>Album:</strong> ${song.collectionName}
+                                         <strong>Artist:</strong> ${album.artistName}<br>
+                                        <strong>Released:</strong> ${new Date(album.releaseDate).getFullYear()}
                                     </p>
                                 </div>
 
                                 <div class="card-footer">
-                                   <a href="${song.artistViewUrl}" class="btn buttonartist" target="_blank" rel="noreferrer noopener">${song.artistName}</a>
-                                   <audio controls class="w-100">
-                                        <source src="${song.previewUrl}" type="audio/mpeg">
-                                        Your browser does not support audio.
-                                    </audio>
+                                   <a href="${album.artistViewUrl}" class="btn buttonartist" target="_blank" rel="noreferrer noopener">${album.artistName}</a>
                                 </div>
                             </div>
                         </div>
                     `;
-                                    });
-                                    html += '</div>'; // rivin sulku
+                                    }
+
+                                    html += '</div>';
                                     document.getElementById("results").innerHTML = html;
                                 })
                                 .catch(error => {
@@ -145,6 +153,14 @@
                                     console.error(error);
                                 });
                         }
+
+                        /* lataa tiedot sivun latautuessa
+                        https://www.debugbear.com/blog/domcontentloaded */
+
+                        window.addEventListener('DOMContentLoaded', () => {
+                            showArtist();
+                        });
+
                     </script>
                 </div>
             </div>
