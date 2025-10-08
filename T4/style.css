@@ -41,6 +41,7 @@ body {
 .links,
 .content {
     margin: 50px;
+    margin-bottom: 15px;
 }
 
 .navbar-custom {
@@ -75,6 +76,26 @@ body {
 .nav-link.active {
     color: yellow !important;
     /* Scroll-spy kohde aktiivinen */
+}
+
+.list-group a {
+    color: #4E342E;
+    font-weight: bold;
+}
+
+.list-group a:hover {
+    color: red;
+    font-weight: bold;
+}
+
+a {
+    color: #4E342E;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+    font-weight: bold;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -130,12 +151,14 @@ body {
     background-color: #FDF5E6;
     padding: 40px 20px;
     border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 .card-container {
     background-color: #FDF5E6;
     padding: 40px 20px;
     border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 .card {
@@ -208,8 +231,8 @@ body {
 
 .form-control:focus {
     background-color: lightyellow;
-    border-color: yellow;
-    box-shadow: 0 0 0 0.2rem yellow;
+    border-color: red;
+    box-shadow: 0 0 0 0.2rem red;
 }
 
 h1,

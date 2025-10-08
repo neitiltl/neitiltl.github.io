@@ -22,7 +22,7 @@
 <body>
 
     <div class="top p-5  text-center">
-        <h1>MUSIC NON STOP</h1>
+        <h1 class="display-1">MUSIC NON STOP</h1>
         <h4><strong>Kraftwerk @ iTunes</strong></h4>
     </div>
 
@@ -59,37 +59,22 @@
                         <h2>&#127900; STOP THE PRESS</h2>
                         <div class="info-container">
 
-                            <h4>Musiikkijulkaisuja:</h4>
-                            <ul class="nav nav-pills flex-column">
+                            <div class="list-group">
 
-                                <li class="nav-item">
-                                    <a class="nav-link " href="https://www.rollingstone.com/" target="_blank"
-                                        rel="noreferrer noopener">Rolling Stone</a>
-                                </li>
+                                <a href="https://www.rollingstone.com/" target="_blank"
+                                    rel="noreferrer noopener">Rolling Stone</a>
                                 <!-- tabnabbing @ card-footer: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/  -->
 
-                                <li class="nav-item">
-                                    <a class="nav-link " href="https://pitchfork.com/" target="_blank"
-                                        rel="noreferrer noopener">Pitchfork</a>
-                                </li>
+                                <a href="https://pitchfork.com/" target="_blank" rel="noreferrer noopener">Pitchfork</a>
 
-                                <li class="nav-item">
-                                    <a class="nav-link " href="https://www.nme.com/" target="_blank"
-                                        rel="noreferrer noopener">NME</a>
-                                </li>
+                                <a href="https://www.nme.com/" target="_blank" rel="noreferrer noopener">NME</a>
 
-                                <li class="nav-item">
-                                    <a class="nav-link " href="https://www.kerrang.com/" target="_blank"
-                                        rel="noreferrer noopener">Kerrang!</a>
-                                </li>
+                                <a href="https://www.kerrang.com/" target="_blank"
+                                    rel="noreferrer noopener">Kerrang!</a>
 
-                                <li class="nav-item">
-                                    <a class="nav-link " href="https://www.soundi.fi/" target="_blank"
-                                        rel="noreferrer noopener">SOUNDI</a>
-                                </li>
+                                <a href="https://www.soundi.fi/" target="_blank" rel="noreferrer noopener">SOUNDI</a>
 
-                            </ul>
-                            <hr class="d-sm-none">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,18 +84,17 @@
                     <h2>&#127900; KRAFTWERK</h2>
                     <div class="card-container">
                         <p>Alla näet valikoiman Kraftwerkin julkaisuista iTunesissa.</p>
-                        <p>Klikkaa nappia siirtyäksesi iTunesin artistisivulle.</p>
-
+                        <p>Napista painamalla pääset iTunesin albumisivulle.</p>
                     </div>
 
                     <!-- tulostetaan results -->
                     <div id="results" style=" margin-top: 20px;"></div>
 
+                    <!--    https://publicapi.dev/i-tunes-api -->
+                    <!--    https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1  -->
+
                     <script>
                         function showAlbums() {
-
-                            <!--    https://publicapi.dev/i-tunes-api
-                                    https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1  -->
 
                             fetch('https://itunes.apple.com/search?term=kraftwerk&entity=album&limit=50')
                                 .then(response => response.json())
@@ -121,26 +105,29 @@
                                     for (let i = 0; i < data.results.length; i++) {
                                         const album = data.results[i];
 
-                                        html += `
+                                        if (album.artistName === "Kraftwerk") {
 
-                        <div class="col-md-4">
+                                            html += `
+
+                        <div class="col-12 col-sm-6 col-md-4">
                             
                             <div class="card ">
                                 <img src="${album.artworkUrl100}" class="card-img-top p-4 rounded" alt="Album art">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">${album.collectionName}</h5>
                                     <p class="card-text">
-                                         <strong>Artist:</strong> ${album.artistName}<br>
+                                         <strong>Artist:</strong> <a href="${album.artistViewUrl}" target="_blank" rel="noreferrer noopener">${album.artistName}</a><br>
                                         <strong>Released:</strong> ${new Date(album.releaseDate).getFullYear()}
                                     </p>
                                 </div>
 
                                 <div class="card-footer">
-                                   <a href="${album.artistViewUrl}" class="btn buttonartist" target="_blank" rel="noreferrer noopener">${album.artistName}</a>
+                                   <a href="${album.collectionViewUrl}" class="btn buttonartist" target="_blank" rel="noreferrer noopener">${album.collectionName}</a>
                                 </div>
                             </div>
                         </div>
                     `;
+                                        }
                                     };
 
                                     html += '</div>';
@@ -168,6 +155,7 @@
 
 
     <div class="footer">
+
         <p>© 2025 MUSIC NON STOP – Powered by iTunes API</p>
     </div>
 

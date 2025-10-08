@@ -19,7 +19,7 @@
 
 <body>
     <div class="top p-5  text-center">
-        <h1>MUSIC NON STOP</h1>
+        <h1 class="display-1">MUSIC NON STOP</h1>
         <h4><strong>iTunes-haku</strong></h4>
     </div>
 
@@ -41,7 +41,7 @@
 
             <div class="row">
 
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <h2>&#127900; INFORMATION</h2>
 
                     <div class="info-container">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <h2>&#127900; SEARCHING</h2>
                     <div class="card-container">
                         <p>Syötä hakukenttään artistin, albumin tai kappaleen nimi ja paina <strong>Hae</strong>. Voit
@@ -99,7 +99,8 @@
                             <span class="input-group-text" rounded ms-2>&#127900;</span>
                             <input type="text" id="searchTerm" class="form-control rounded" placeholder="Hakusanat"
                                 value="kraftwerk music non stop">
-                            <button class="btn buttonsend ms-2 rounded" onclick="searchArtist()">Hae</button>
+                            <button type="button" class="btn  btn-primary btn-lg buttonsend ms-3 rounded"
+                                onclick="searchArtist()">Hae</button>
                         </div>
 
                     </div>
@@ -122,7 +123,7 @@
                                     data.results.forEach(song => {
                                         html += `
 
-                        <div class="col-md-4">
+                        <div class="col-12 col-sm-6 col-md-4">
                             
                             <div class="card ">
                                 <img src="${song.artworkUrl100}" class="card-img-top p-4 rounded" alt="Album art">
